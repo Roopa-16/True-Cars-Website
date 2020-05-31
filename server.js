@@ -52,6 +52,28 @@ app.get("/Mileage", function(req, res) {
   });
 });
 
+app.get("/Price", function(req, res) {
+  db.TestSet.find().sort({ Price: 1 }, function(error, found) {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      res.json(found);
+    }
+  });
+});
+
+app.get("/Year", function(req,res) {
+  db.TestSet.find().sort({ Year: 1 }, function(error, found) {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      res.json(found);
+    }
+  });
+});
+
 app.listen(3000, function() {
   console.log("App running on port 3000!");
 });

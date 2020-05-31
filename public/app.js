@@ -36,3 +36,17 @@ $("#make-sort").on("click", function() {
     displayResults(data);
   });
 });
+
+$("#year-sort").on("click", function() {
+  setActive("#trueCars-Year");
+  $.getJSON("/Year", function(data) {
+    displayResults(data);
+  });
+});
+
+$("#price-sort").on("click", function() {
+  setActive("#trueCars-Price");
+  $.getJSON("/Price", function(data) {
+    displayResults(data);
+  });
+});
